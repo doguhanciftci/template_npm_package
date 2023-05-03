@@ -2,9 +2,30 @@
   "name": "template_npm_package",
   "version": "1.0.0",
   "description": "Template Project for Creating NPM Packages",
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "IF exist lib ( rd /S /Q lib )",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json && move .\\lib\\esm\\index.js .\\lib\\esm\\index.mjs",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "prepack": "npm run build",
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
