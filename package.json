@@ -1,0 +1,20 @@
+{
+  "name": "template_npm_package",
+  "version": "1.0.0",
+  "description": "Template Project for Creating NPM Packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doguhanciftci/template_npm_package.git"
+  },
+  "keywords": [],
+  "author": "Doguhan Ciftci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doguhanciftci/template_npm_package/issues"
+  },
+  "homepage": "https://github.com/doguhanciftci/template_npm_package#readme"
+}
