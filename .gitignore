@@ -83,6 +83,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# Library output
+/lib
+
 # Next.js build output
 .next
 out
